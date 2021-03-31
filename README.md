@@ -1,0 +1,1 @@
+# Posloseni-kvocientni-kriterij
