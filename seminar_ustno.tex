@@ -1,0 +1,166 @@
+\documentclass{beamer}
+
+\usepackage[slovene]{babel}
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usefonttheme{serif}
+\usetheme{Warsaw}
+
+\def\qed{$\hfill\Box$}   % konec dokaza
+\newtheorem{izrek}{Izrek}
+\newtheorem{trditev}{Trditev}
+\newtheorem{posledica}{Posledica}
+\newtheorem{lema}{Lema}
+\newtheorem{definicija}{Definicija}
+\newtheorem{cilj}{Cilj}
+\newtheorem{opomba}{Opomba}
+\newtheorem{primer}{Primer}
+\newtheorem{zgled}{Zgled}
+\newtheorem{dokaz}{Dokaz}
+% ===================================================================
+
+\begin{document}
+\title{Izreka o konvergenci in posplošitev kvocientnega kriterija}
+\author{Timotej Stibilj}
+\institute[FMF]{Fakulteta za matematiko in fiziko \\
+Oddelek za matematiko}
+\date{30. marec 2021}
+
+\begin{frame}
+   \titlepage
+\end{frame}
+% ===================================================================
+\section{Uvod}
+% ===================================================================
+\begin{frame}
+    \begin{block}{Motivacija}
+    Pri določanju konvergence vrst $\sum_{n = 1}^{\infty}{a_n}$ z nenegativnimi členi si pomagamo z znanimi kriteriji.
+    Spomnimo se na kvocientni kriterij. \\
+    Če obstaja limita:
+    \[
+       \lim_{n \to \infty} \frac{a_{n + 1}}{a_n} = r \text{,}
+    \]
+    potem velja: \\
+         \begin{itemize}
+             \item če $ r < 1 $ vrsta konvergira,
+             \item če $r > 1$ vrsta divergira,
+             \item pri $r = 1$ kriterij odpove.
+         \end{itemize}
+ 
+    Radi bi posplošili \emph{kvocientni kriterij}, da bo z njim možno določiti konvergenco večjega nabora vrst.  
+    \end{block}
+\end{frame}
+
+% -------------------------------------------------------------------
+\begin{frame}
+    \begin{primer}{Primer vrste za $r = 1$}: \\
+       $\sum_{n = 1}^{\infty}{\frac{1}{n^p}}$, $p > 0$
+    \end{primer}
+    
+    \vspace{\baselineskip}
+    \pause
+    $D = \lim_{n \to \infty} \frac{\frac{1}{(n+1)^p}}{\frac{1}{n^p}}$
+    \pause
+    $= \lim_{n \to \infty} (\frac{n}{n + 1})^p$ 
+    \pause
+    $= 1$
+    \pause
+    
+    \vspace{\baselineskip}
+    Kvocientni kriterij torej odpove.
+    Opomba: Pri analizi 1 smo dokazali, da vrsta konvergira natanko tedaj ko s > 1.
+    % člene združujemo in pokažemo, da je zaporedje delnih vsot omejeno/neomejeno glede na s
+\end{frame}
+% -------------------------------------------------------------------
+\begin{frame}
+    \begin{cilj}
+        Predstavili bomo vrsto ekvivalenc za konvergenco vrst. Najpomembnješa rezultata sta:
+        \begin{itemize}
+            \item za $ 1 < q \in {\mathbb{N}}$, $\sum_{n = 1}^{\infty}{q^na_{q^n}}$ konvergira $\iff \sum_{n = 1}^{\infty}{a_{n}}$ konvergira, \\
+            \item posplosen kvocientni kriterij.
+        \end{itemize} 
+    \end{cilj}
+
+    \pause
+    \vspace{\baselineskip}
+
+    
+    \begin{opomba}
+        Sledeči izreki veljajo za \textcolor{red}{padajoče} vrste z nenegativnimi členi.\\
+        BŠS lahko za vsako dano vrsto z nenegativnimi členi predpostavimo, da je padajoča.
+
+        \vspace{\baselineskip}
+        Dokaz: Uporabimo izrek o preureditvi absolutno konvergentnih vrst.
+        %To lahko storimo zaradi izreka o preureditvi absolutno konvergentih vrst.
+        %Vrsta absolutno konvergira $\implies$ vsaka preurejena vrsta konvergira k isti vsoti.
+    \end{opomba}
+\end{frame}
+
+% ===================================================================
+\section{1. Izrek}
+% ===================================================================
+
+\begin{frame}
+    \begin{izrek}
+        Naj bo ${a_n}$ padajoče zaporedje nenegativnih realnih števil. \\
+        
+        \vspace{0.15cm}
+        Vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira natanko tedaj, ko za vsako 
+        podzaporedje $\{n_k\}$ zaporedja $\{n\}$ naravnih števil, konvergira vrsta 
+        $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k}}}$
+
+        \vspace{0.35cm}
+        Še več, velja vrsta ekvivalentnih trditev:
+        \begin{enumerate}
+            \item $\sum_{n = 1}^{\infty}{a_n}$ konvergira
+            \item za vsako podzaporedje $\{n_k\}$ zaporedja $\{n\}$ \\
+            konvergira $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k + 1}}}$
+            \item $\forall M > 0$, če za podzaporedje $\{n_k\}$ velja:
+            \[
+                (n_{k+1} - n_k) <= M * (n_k - n_{k - 1}),  \forall \quad 1 < k \in {\mathbb{N}} 
+            \]
+            potem $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k}}}$ konvergira.
+            \item cetrta tocka
+        \end{enumerate}
+    \end{izrek}
+    
+\end{frame}
+% -------------------------------------------------------------------
+\begin{frame}
+    \begin{dokaz}
+        napisi dokaz, odvisno od časa, vsaj 1 -> 2, ali verigo implikacij 1,2,3,4,1
+    \end{dokaz}
+\end{frame}
+
+% -------------------------------------------------------------------
+\begin{frame}
+    \begin{zgled}
+        Alternativni dokaz divergence harmonične vrste -> z implikacije 1 v 2
+    \end{zgled}
+\end{frame}
+
+% -------------------------------------------------------------------
+\begin{frame}
+    \begin{posledica}
+        %posledica izreka 1
+        Če obstaja podzaporedje $\{n_k\}$, da velja:
+        \[
+            \lim_{k \to \infty} (n_{k+1} - n_k)a_{n{k+1}} \neq 0 
+        \] 
+        sledi divergenca za $\sum_{n = 1}^{\infty}{a_n}$
+    \end{posledica}
+
+    \vspace{0.45cm}
+    \pause
+    \begin{dokaz}
+        Direktna posledica pogoja za konvergenco in implikacije $1 \implies 2$.
+    \end{dokaz}
+
+    
+\end{frame}
+
+% ===================================================================
+\end{document}
