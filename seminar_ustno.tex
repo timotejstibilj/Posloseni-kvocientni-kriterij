@@ -270,6 +270,119 @@ Oddelek za matematiko}
 
 
 \end{frame}
+
+% -------------------------------------------------------------------
+\begin{frame}
+    \begin{posledica}
+        Naj bo $a_n$ padajoče zaporedje. Če velja:
+        \[
+            \lim_{n \to \infty}{q^ka_{q^k}} \neq 0 \text{,} 
+        \]
+        tedaj $\sum_{n = 1}^{\infty}{a_n}$ divergira.
+    \end{posledica}
+    \pause
+
+    \begin{dokaz}
+        Direktna posledica pogoja za konvergenco in implikacije $ (1) \implies (2)$
+    \end{dokaz}
+    
+\end{frame}
+
+% -------------------------------------------------------------------
+\begin{frame}
+    \begin{opomba}
+        Pri analizi 1 (vaje) smo za padajoče zaporedje ${a_n}$ dokazali:
+        \[
+            \sum_{n = 1}^{\infty}{a_n} \quad \text{konvergira} \iff \text{konvergira vrsta}
+            \sum_{n = 1}^{\infty}{2^ka_{2^k}}
+        \]
+        Naš izrek je posplošitev tega kriterija (Cauchyjevega kondenzacijskega kriterija) za $q = 2$.
+    \end{opomba}
+\end{frame}
+
+% -------------------------------------------------------------------
+
+\begin{frame}{Razširitev/Posplošitev ? kvocientnega kriterija}
+    Po izreku 2, vemo: \\
+    $\sum_{n = 1}^{\infty}{a_n}$ konvergira $\iff$
+    $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$, $q \in {\mathbb{N}}$, $q > 1$  konvergira.\\
+
+    Zapišimo kvocienti kriterij za $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$. Ta vrsta konvergira, če velja:
+
+    \pause    
+    \[  
+        D := 
+        \lim_{k \to \infty}{\frac{q^{k + 1}a_{q^{k + 1}}}{q^ka^k}}  =
+        \lim_{k \to \infty}{\frac{qa_{q^{k + 1}}}{a^k}} < 1
+        \iff
+        \lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a^k}} < \frac{1}{q}
+    \]
+    
+    Seveda velja tudi:\\
+    če $\lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a^k}} > \frac{1}{q}$
+    vrsta $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$ divergira.    
+\end{frame}
+% -------------------------------------------------------------------
+%zapisemo izrek, tako kot se za gre
+
+\begin{frame}{Razširitev/Posplošitev ? kvocientnega kriterija}
+    \begin{izrek}
+        Naj bo $q \in {\mathbb{N}}$, $q > 1$ in ${a_n}$ zaporedje,
+        ki zadošča $a_{n} \geq a_{n+1} \geq 0 \text{,} \quad \forall n \in {\mathbb{N}}$
+        Tedaj velja:
+        \pause
+
+        \begin{enumerate}
+            \item Če $\lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a^k}} < \frac{1}{q}$,
+            potem vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira.
+            \item Če $\lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a^k}} > \frac{1}{q}$,
+            potem vrsta $\sum_{n = 1}^{\infty}{a_n}$ divergira.
+        \end{enumerate}
+    \end{izrek}
+    
+    \pause
+    \begin{dokaz}
+        Uporaba izreka 2 in kvocientnega kriterija za $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$.
+    \end{dokaz}
+\end{frame}
+% -------------------------------------------------------------------
+% Izrek je zares posplošitev kvocientnega kriterij:
+\begin{frame}
+    \begin{trditev}
+        Naj bo $a_{n}$ padajoče zaporedje in naj obstaja limita
+        $D := \lim_{n \to \infty}{\frac{a_{n + 1}}{a_n}}$. Tedaj za $q \in {\mathbb{N}}$, $q > 1$ velja:
+        \[
+            \lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a_{q^k}}} = 0
+        \]
+
+    \end{trditev}
+    
+\end{frame}
+% -------------------------------------------------------------------
+
+\begin{frame}
+    \begin{dokaz}
+    \end{dokaz}
+\end{frame}
+
+% -------------------------------------------------------------------
+\begin{frame}
+    Poglejmo si uporabo kriterija na dveh zgledih.
+    \begin{zgled}
+        Vemo, da za vrsto 
+        $\sum_{n = 1}^{\infty}{\frac{1}{n^p}}$, $p > 0$
+        kvocientni kriterij odpove.
+        Poskusimo z razširjenim kvocientnim kriterijem.
+        \[
+            \lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a_{q^k}}}
+        \]
+
+    \end{zgled}
+    \begin{zgled}
+        mogoče se vrsta $\frac{1}{nln^p(n)}$
+    \end{zgled}
+\end{frame}
+
 % ===================================================================
 \end{document}
 
