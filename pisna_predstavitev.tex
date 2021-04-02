@@ -1,0 +1,128 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[slovene]{babel}
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+
+
+\def\N{\mathbb{N}} % mnozica naravnih stevil
+\def\Z{\mathbb{Z}} % mnozica celih stevil
+\def\Q{\mathbb{Q}} % mnozica racionalnih stevil
+\def\R{\mathbb{R}} % mnozica realnih stevil
+\def\C{\mathbb{C}} % mnozica kompleksnih stevil
+\newcommand{\geslo}[2]{\noindent\textbf{#1} \quad \hangindent=1cm #2\\[-1pc]}
+
+
+\def\qed{$\hfill\Box$}   % konec dokaza
+\def\qedm{\qquad\Box}   % konec dokaza v matematičnem načinu
+\newtheorem{izrek}{Izrek}
+\newtheorem{trditev}{Trditev}
+\newtheorem{posledica}{Posledica}
+\newtheorem{lema}{Lema}
+\newtheorem{pripomba}{Pripomba}
+\newtheorem{definicija}{Definicija}
+\newtheorem{zgled}{Zgled}
+
+\title{Posplošitev kvocientnega kriterija za konvergenco vrste \\ 
+\Large Seminar}
+\author{Timotej Stibilj \\
+Fakulteta za matematiko in fiziko \\
+Oddelek za matematiko}
+\date{21.\ marec 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{uvod}
+
+\emph{Kvocientni kriterij}, imenovan tudi \emph{D'Alembertov kriterij} po francoskem matematiku Jeanu le Rond d'Alembertu
+nam je pogosto v pomoč pri določevanju konvergence vrst $\sum_{n = 1}^{\infty}{a_n}$ z nenegativnimi členi. 
+V poštev pride predvsem pri vrstah, ki vsebujejo n-te potence števil, npr. $\sum_{n = 1}^{\infty}{\frac{a^n}{n^s}}$, 
+in pri vrstah, ki vsebujejo člen n faktorsko, npr. $\sum_{n = 1}^{\infty}{\frac{a^n}{n!}}$.
+Spomnimo se, kako ga uporabimo:\\
+
+\noindent
+\begin{izrek}[Kvocientni kriterij]
+    Če obstaja limita:
+    \[
+        D := \lim_{n \to \infty} \frac{a_{n + 1}}{a_n} \text{,}
+    \]
+    potem velja:
+    \begin{itemize}
+        \item če je $ D < 1 $ vrsta konvergira,
+        \item če je $D > 1$ vrsta divergira,
+        \item za $D = 1$ kriterij odpove.
+    \end{itemize}
+\end{izrek}
+
+Poglejmo si preprost primer, pri katerem kvocientni kriterij odpove.
+
+\begin{zgled}
+    Vzemimo $a_n$ = $\frac{1}{n^p}$, $p \in \N$.
+    \[
+        D = \lim_{n \to \infty} \frac{a_{n + 1}}{a_n}
+        = \lim_{n \to \infty} \frac{\frac{1}{(n+1)^p}}{\frac{1}{n^p}}
+        = \lim_{n \to \infty} (\frac{n}{n + 1})^p
+        = 1
+    \]
+    Limita $ \lim_{n \to \infty} \frac{a_{n + 1}}{a_n} $ je torej 1, od koder sledi, da si s kvocientnim kriterijem ne moremo pomagati.
+\end{zgled}
+
+Naravno se je vprašati, kako lahko kvocientni kriterij posplošimo, da bo zadostoval za določanje konvergence,
+kjer kvocienti kriterij odpove, obenem tudi za prejšnji primer.\\
+Možnih razširitev kriterija je več. V tem besedilu se bomo osredotočili na preproste kriterije, ki ne
+zahtevajo poznavanja zahtevnih matematičnih konceptov. Predstavili bomo vrsto ekvivalentnih trditev
+za konvergenco vrste $\sum_{n = 1}^{\infty}{a_n}$, kjer je ${a_n}$ padajoče zaporedje nenegativnih realnih števil, s preprostimi dokazi. Osrednja
+izreka, ki ju želimo predstaviti sta:
+
+\begin{itemize}
+    \item Za $ 1 < q \in \N$, $\sum_{n = 1}^{\infty}{q^na_{q^n}}$ konvergira $\iff \sum_{n = 1}^{\infty}{a_{n}}$ konvergira.
+    \item Posplošeni kvocientni kriterij, ki ga dobimo s pomočjo zgornjega izreka in običajnega kvocientnega kriterija.
+    Le-tega lahko seveda, kakor ime pove, uporabimo v nekaterih primerih, v katerih običajen kvocientni kriterij odpove, 
+    hkrati pa njegova uporaba, v smislu težavnosti računanja, ostaja enostavna.
+\end{itemize}
+
+
+Vsi izreki, ki so predstavljeni v nadaljevanju, veljajo za padajoče zaporedje nenegativnih števil.
+Kaj lahko naredimo v primeru, ko imamo opravka z zaporedje $a_n$, ki ni padajoče?
+Spomnimo se na izrek o preureditvi absolutno konvergentne vrste.
+
+\begin{izrek}
+    Naj bo vrsta $\sum_{n = 1}^{\infty}{a_n}$ absolutno konvergentna.\\
+    Tedaj za vsako bijekcijo:
+    \[\pi: \N \rightarrow \N \]
+    tudi vrsta $\sum_{n = 1}^{\infty}{a_{\pi(n)}}$ konvergira in vsota vrst je enaka.
+\end{izrek}
+
+Torej lahko v primeru, ko se ukvarjamo z vsoto vrste $\sum_{n = 1}^{\infty}$, kjer je $\{a_n\}$ zaporedje z nenegativnimi členi, BŠS predpostavimo, 
+da je $\{a_n\}$ padajoče. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+
+\begin{abstract}
+\end{abstract}
+
+
+\tableofcontents
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\bibliographystyle{siam}
+\bibliographystyle{magic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
