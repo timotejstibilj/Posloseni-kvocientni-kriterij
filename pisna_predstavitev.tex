@@ -226,11 +226,20 @@ $(4) \implies (1)$\\
 Vzemimo tako podzaporedje  $\{n_k\}$, da $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_k}}$ konvergira.
 Konvergenco vrste $\sum_{n = 1}^{\infty}{a_n}$ bomo dokazali s pomočjo zaporedja delnih vsot.
 Označimo z $\{s_m\}$ zaporedje delnih vsot vrste $\sum_{n = 1}^{\infty}{a_n}$.\\
-Tedaj za $\forall m \in \N, n_1 < m$, velja:
+Tedaj za $\forall m \in \N, n_1 < m$, velja sledeča ocena:
+
 \[
-    0 < s_m := a_1 + a_2 + \cdots + a_m \leq n_{1}a_{1} + \sum_{k = 1}^{m}{(n_{k+1} - n_k)a_{n_k}}
+    \begin{split}
+        0 & < s_m := a_1 + a_2 + \cdots + a_m \\
+        & \leq (a_1 + \ldots + a_{n_1}) + (a_{n_{1} + 1} + \ldots + a_{n_{2}})
+        + \ldots  + (a_{n_{m} + 1} + \ldots + a_{n_{m+1}})\\
+        & \leq n_{1}a_{1} + (n_2 - n_1)a_{n_{1} + 1} + \ldots + (n_{m+1} - n_m)a_{n_{m}+1}\\
+        & \leq n_{1}a_{1} + (n_2 - n_1)a_{n_1} + \ldots + (n_{m+1} - n_{m})a_{n_{m}}\\
+        & = n_{1}a_{1} + \sum_{k = 1}^{m}{(n_{k+1} - n_k)a_{n_k}}
+    \end{split}
 \]
-Od tod sledi, da je zaporedje ${s_n}$ omejeno, saj vrsta $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_k}}$ konvergira, 
+Pri tem smo upoštevali predpostavko, da je zaporedje $a_n$ padajoče.
+Iz ocene sledi, da je zaporedje ${s_n}$ omejeno, saj vrsta $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_k}}$ konvergira, 
 kar implicira, da je zaporedje njenih delnih vsot $\sum_{k = 1}^{m}{(n_{k+1} - n_k)a_{n_k}}$ omejeno.
 Zaporedje ${s_n}$ je torej omejeno, očitno je tudi monotono, od tod sledi njegova konvergenca.
 S tem je izrek dokazan.
@@ -245,7 +254,7 @@ S tem je izrek dokazan.
 \end{posledica}
 
 \noindent
-\textbf{Dokaz}:\\
+{\em Dokaz:\/}
 Sledi direktno iz potrebnega pogoja konvergenco vrste $\sum_{n = 1}^{\infty}{a_n}$,
 $\lim_{n \to \infty}{a_n} = 0$ in implikacije $ (1) \implies (2)$.
 \qed
