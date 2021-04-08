@@ -74,9 +74,9 @@ Poglejmo si preprost primer, pri katerem kvocientni kriterij ne da odgovora.
 
 Naravno se je vprašati, kako lahko kvocientni kriterij posplošimo, da bo zadostoval za ugotavljanje konvergence,
 kjer kvocienti kriterij ne da odgovora, na primer za vrsto $\sum_{n = 1}^{\infty}{\frac{1}{n^p}}$.
-S tem v posebnem, t. j. za $p = 1$, dobimo tudi alternativni dokaz za divergenco harmonične vrste.
+S pomočjo izrekov, ki so predstavljeni v nadaljevanju, dobimo tudi alternativni dokaz znanega dejstva, da harmonična vrsta divergira.
 
-Možnih razširitev kriterija je več. V tem besedilu se bomo osredotočili na preproste kriterije, ki ne
+Možnih razširitev kvocientnega kriterija je več. V tem besedilu se bomo osredotočili na preproste kriterije, ki ne
 zahtevajo poznavanja zahtevnih matematičnih konceptov. Predstavili bomo vrsto ekvivalentnih trditev
 za konvergenco vrste $\sum_{n = 1}^{\infty}{a_n}$, kjer je $\{a_n\}$ padajoče zaporedje nenegativnih realnih števil, s preprostimi dokazi. Osrednja
 izreka, ki ju želimo predstaviti sta:
@@ -90,7 +90,7 @@ izreka, ki ju želimo predstaviti sta:
 
 
 Vsi izreki, ki so predstavljeni v nadaljevanju, veljajo za padajoča zaporedja nenegativnih števil.
-Kaj lahko naredimo v primeru, ko imamo opravka z zaporedje $a_n$, ki ni padajoče?
+Kaj lahko naredimo v primeru, ko imamo opravka z zaporedjem $\{a_n\}$, ki ni padajoče?
 Spomnimo se na izrek o preureditvi absolutno konvergentne vrste.
 
 \begin{izrek}
@@ -217,8 +217,8 @@ Iz ekvivalence med 1. in 2. iz izreka 3 in potrebnega pogoja za konvergenco vrst
 
 Po izreku 3 velja: 
 Konvergenca vrste $\sum_{n = 1}^{\infty}{a_n}$ implicira obstoj takega
-podzaporedja $\{n_k\}$ od $\{n\}$, da $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k + 1}}}$ konvergira.
-Obratno, če $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k + 1}}}$, sledi da 
+podzaporedja $\{n_k\}$ od $\{n\}$, da $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k}}}$ konvergira.
+Obratno, če $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k}}}$ konvergira, potem sledi, da 
 $\sum_{n = 1}^{\infty}{a_n}$ konvergira.
 Izkaže se, da lahko konvergenco $\sum_{n = 1}^{\infty}{a_n}$ popolnoma karakteriziramo
 z $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$, torej če za $\{n_k\}$ izberemo ${q^k}$, kjer je $q \in \N$, $q > 1$.
@@ -302,12 +302,17 @@ S tem je izrek dokazan.
 \qed
 
 \begin{posledica}(O divergenci).
-    Naj bo $a_n$ padajoče zaporedje nenegativnih števil. Če velja:
+    Naj bo $a_n$ padajoče zaporedje nenegativnih števil in $ q \in {\mathbb{N}}$, $q > 1$. Če velja:
     \[
         \lim_{n \to \infty}{q^ka_{q^k}} \neq 0 \text{,} 
     \]
     tedaj $\sum_{n = 1}^{\infty}{a_n}$ divergira.
 \end{posledica}
+
+\begin{zgled}
+    Ponovno vzemimo harmonično vrsto $\sum_{n = 1}^{\infty}{\frac{1}{n}}$. \\
+    Hitro lahko opazimo, da je v tem primeru zaporedje $q^ka_{q^k}$ konstantno enako 1, torej v limiti ne gre proti 0.
+\end{zgled}
 
 \noindent
 {\em Dokaz:\/}
@@ -382,8 +387,8 @@ Tedaj velja:
 
 
 \begin{trditev}
-    Naj bo $a_{n}$ padajoče zaporedje in naj obstaja limita
-    $D := \lim_{n \to \infty}{\frac{a_{n + 1}}{a_n}}$. Tedaj za $q \in {\mathbb{N}}$, $q > 1$ velja:
+    Naj bo $\{a_{n}\}$ padajoče zaporedje in naj obstaja limita
+    $D := \lim_{n \to \infty}{\frac{a_{n + 1}}{a_n}} < 1$. Tedaj za $q \in {\mathbb{N}}$, $q > 1$ velja:
     \[
         \lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a_{q^k}}} = 0
     \]
