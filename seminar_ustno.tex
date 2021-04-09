@@ -53,8 +53,8 @@ Oddelek za matematiko}
     \]
     potem velja: \\
          \begin{itemize}
-             \item če $ D < 1 $ vrsta konvergira,
-             \item če $ D > 1$ vrsta divergira,
+             \item če $ D < 1 $ vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira,
+             \item če $ D > 1$ vrsta $\sum_{n = 1}^{\infty}{a_n}$ divergira,
              \item če $ D = 1$ o konvergenci ne moremo soditi.
          \end{itemize}
    
@@ -73,9 +73,9 @@ Oddelek za matematiko}
     $= \lim_{n \to \infty} (\frac{n}{n + 1})^p$ 
     $= 1$
     \pause
-    \vspace{\baselineskip}
+    \vspace{\baselineskip}\\
     Kvocientni kriterij torej ne da odgovora.\\
-    Opomba: Pri analizi 1 smo dokazali, da vrsta konvergira natanko tedaj ko s > 1.
+    Opomba: Pri analizi 1 smo dokazali, da vrsta konvergira natanko tedaj, ko s > 1.
     % člene združujemo in pokažemo, da je zaporedje delnih vsot omejeno/neomejeno glede na s
 \end{frame}
 % -------------------------------------------------------------------
@@ -106,7 +106,7 @@ Oddelek za matematiko}
         \]
         tudi vrsta $\sum_{n = 1}^{\infty}{a_{\pi(n)}}$ konvergira in je 
         \[
-            \sum_{n = 1}^{\infty}{a_{\pi(n)}} = \sum_{n = 1}^{\infty}{a_n}
+            \sum_{n = 1}^{\infty}{a_{\pi(n)}} = \sum_{n = 1}^{\infty}{a_n} \text{.}
         \]
     \end{izrek}
 \end{frame}
@@ -130,7 +130,7 @@ Oddelek za matematiko}
 % ===================================================================
 
 \begin{frame}
-    Pri določevanju konvergence vrste $\sum_{n = 1}^{\infty}{a_n}$, si lahko pomagamo s konvergenco vrste
+    Pri ugotavljanju konvergence vrste $\sum_{n = 1}^{\infty}{a_n}$, si lahko pomagamo s konvergenco vrste
     $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k}}}$, kjer je $\{n_k\}$ podzaporedje zaporedja $\{n\}$ naravnih števil.    
 \end{frame}
 
@@ -149,12 +149,6 @@ Oddelek za matematiko}
             \item Za vsak $M > 0$, če za podzaporedje $\{n_k\}$ zaporedja $\{a_n\}$ velja:\\
             $ (n_{k+1} - n_k) \leq M(n_k - n_{k - 1})$ za vsak $ 1 < k \in \N$,
             potem vrsta $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k}}}$ konvergira.
-            \pause
-            \item Za vsak $M > 0$ obstaja podzaporedje $\{n_k\}$ zaporedja $\{n\}$, tako da velja:
-            \[
-                1 < n_{k+1} - n_k < (M+1)(n_k - n_{k - 1}),  \forall \quad 1 < k \in \N 
-            \]
-            in vrsta $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k}}}$ konvergira.
         \end{enumerate}
     \end{izrek}
 \end{frame}
@@ -195,7 +189,7 @@ Oddelek za matematiko}
             \end{split}
         \]
         \pause
-        Zaporedje $\{t_m\}  = n_1a_1 + \sum_{k = 1}^{m}{(n_{k+1} - n_k)a_{n_{k + 1}}}$ je konvergentno, sledi
+        Zaporedje $\{t_m\}  = n_1a_{n_1} + \sum_{k = 1}^{m}{(n_{k+1} - n_k)a_{n_{k + 1}}}$ je konvergentno, sledi
         da $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k + 1}}}$ konvergira.
     \end{dokaz}
 \end{frame}
@@ -208,7 +202,7 @@ Oddelek za matematiko}
         \pause
         Sledi:
         \[
-            (n_{k+1} - n_k)a_{n_k} \leq M(n_k - n_{k - 1})a_{n_k}, \quad \text{za vsak} \quad  1 < k \in \N \text{,}
+            (n_{k+1} - n_k)a_{n_k} \leq M(n_k - n_{k - 1})a_{n_k}, \quad \text{za vsak} \quad  1 < k \in \N
         \]
         \pause
         Po predpostavki konvergira vrsta
@@ -237,7 +231,7 @@ Oddelek za matematiko}
         Naj bo ${a_n}$ padajoče zaporedje nenegativnih realnih števil.
         Če obstaja podzaporedje $\{n_k\}$ zaporedja \{n\} naravnih števil, da velja:
         \[
-            \lim_{k \to \infty} (n_{k+1} - n_k)a_{n_{k+1}} \neq 0 
+            \lim_{k \to \infty} (n_{k+1} - n_k)a_{n_{k+1}} \neq 0 \text{,}
         \] 
         potem $\sum_{n = 1}^{\infty}{a_n}$ divergira.
     \end{posledica}
@@ -254,13 +248,13 @@ Oddelek za matematiko}
         \[
             \sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_{k + 1}}} =
             \sum_{k = 1}^{\infty}{((k + 1)! - k!) \frac{1}{(k+1)!}}=
-            \sum_{k = 1}^{\infty}{\frac{k}{k + 1}}
+            \sum_{k = 1}^{\infty}{\frac{k}{k + 1}} \text{.}
         \]
         \pause
         Vrsta $\sum_{k = 1}^{\infty}{\frac{k}{k + 1}}$ divergira,
         saj $\lim_{k \to \infty}{\frac{k}{k + 1}} \neq 0$. \\
         \vspace{0.3 cm}
-        Sledi $\sum_{n = 1}^{\infty}{\frac{1}{n}}$ divergira.
+        Sledi, da vrsta $\sum_{n = 1}^{\infty}{\frac{1}{n}}$ divergira.
     \end{zgled}
 \end{frame}
 
@@ -289,13 +283,13 @@ Oddelek za matematiko}
 \begin{frame}{Dokaz}
     \begin{block}{}
         \begin{enumerate}   
-            \item[(1)] $\sum_{n = 1}^{\infty}{a_n}$ konvergira $\implies$
-            \item[(2)] $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$ konvergira
+            \item[(1)] Vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira $\implies$
+            \item[(2)] Vrsta $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$ konvergira.
         \end{enumerate}
     \end{block}     
     
     Naj bo $ 1 < q \in {\mathbb{N}}$.\\
-    Uporabimo implikacijo $(1) \implies (3)$
+    Uporabimo implikacijo iz 1. v 3.
     iz izreka 1, za $n_k = q^k$:\\
     \[
         n_{k+1} - n_k \leq q(q^k - q^{k-1}) = q(n_{k} - n_{k - 1})
@@ -311,7 +305,7 @@ Oddelek za matematiko}
 \begin{frame}{Dokaz}
     \begin{block}{}
         \begin{enumerate} 
-            \item[(2)] $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$ konvergira $\implies$
+            \item[(2)] Vrsta $\sum_{k = 1}^{\infty}{q^ka_{q^k}}$ konvergira $\implies$
             \item[(3)] Obstaja podzaporedje $\{n_k\}$ zaporedja $\{n\}$, da je $\{n_{k+1} - n_k\}$ 
             naraščajoče in konvergirata vrsti:
             $\sum_{k = 1}^{\infty}{\frac{1}{n_{k+1} - n_k}}$ in 
@@ -322,7 +316,7 @@ Oddelek za matematiko}
     Vzemimo ${n_k} = q^k$.
     \pause 
     \begin{itemize}
-        \item $\{n_{k+1} - n_k\}$ je naraščajoče, saj $ q > 1$
+        \item Zaporedje $\{n_{k+1} - n_k\}$ je naraščajoče, saj $ q > 1$
         \pause
         \item 
         $\sum_{k = 1}^{\infty}{\frac{1}{n_{k+1} - n_k}} = 
@@ -344,7 +338,7 @@ Oddelek za matematiko}
             \item[(3)] Obstaja podzaporedje $\{n_k\}$ zaporedja $\{n\}$, da je $\{n_{k+1} - n_k\}$ 
             naraščajoče in konvergirata vrsti:
             $\sum_{k = 1}^{\infty}{\frac{1}{n_{k+1} - n_k}}$ in 
-            $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_k}} \implies$
+            $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_k}}$.$ \implies$
             \item[(4)] Obstaja podzaporedje $\{n_k\}$ od $\{n\}$, da 
             $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_k}}$ konvergira.
 
@@ -365,7 +359,7 @@ Oddelek za matematiko}
         \begin{enumerate}  
             \item[(4)] Obstaja podzaporedje $\{n_k\}$ od $\{n\}$, da 
             $\sum_{k = 1}^{\infty}{(n_{k+1} - n_k)a_{n_k}}$ konvergira $\implies$
-            \item[(1)] $\sum_{n = 1}^{\infty}{a_n}$ konvergira.
+            \item[(1)] Vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira.
         \end{enumerate}
     \end{block} 
     \pause
@@ -404,7 +398,7 @@ Oddelek za matematiko}
         Pri analizi 1 smo za padajoče zaporedje nenegativnih števil ${a_n}$ dokazali:
         \[
             \sum_{n = 1}^{\infty}{a_n} \quad \text{konvergira natanko tedaj, ko konvergira}
-            \sum_{n = 1}^{\infty}{2^ka_{2^k}}
+            \sum_{n = 1}^{\infty}{2^ka_{2^k}} \text{.}
         \]
         Izrek 2 je posplošitev tega kriterija (Cauchyjevega kondenzacijskega kriterija), ki ga dobimo pri $q = 2$.
     \end{opomba}
@@ -483,7 +477,7 @@ Oddelek za matematiko}
         Vemo, da za vrsto 
         $\sum_{n = 1}^{\infty}{\frac{1}{n^p}}$, $p > 0$
         kvocientni kriterij ne da odgovora.
-        Poskusimo z razširjenim kvocientnim kriterijem.
+        Poskusimo s posplošenim kvocientnim kriterijem.
         \pause
         \[
             \lim_{k \to \infty}{\frac{a_{q^{k + 1}}}{a_{q^k}}} =
